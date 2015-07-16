@@ -1,6 +1,19 @@
+words =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
+          'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
+          'flow', 'neon']
+          
+result = {}
 
-arr = [1, 2, 3, 4, 5]
+words.each do |word|
+  key = word.split('').sort.join
+  if result.has_key?(key)
+    result[key].push(word)
+  else
+    result[key] = [word]
+  end
+end
 
-arr.each do |x| 
-  puts x +1 
+result.each do |k, v|
+  puts "------"
+  p v
 end
