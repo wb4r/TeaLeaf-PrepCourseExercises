@@ -1,19 +1,14 @@
-words =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
-          'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
-          'flow', 'neon']
-          
-result = {}
-
-words.each do |word|
-  key = word.split('').sort.join
-  if result.has_key?(key)
-    result[key].push(word)
-  else
-    result[key] = [word]
-  end
+def space_out_letters(person)
+  return person.split("").join(" ")
 end
 
-result.each do |k, v|
-  puts "------"
-  p v
+def greet(person)
+  return "H e l l o , " + space_out_letters(person)
 end
+
+def decorate_greeting(person)
+  puts "" + greet(person) + ""
+end
+
+decorate_greeting("John")
+decorate_greeting(1)
